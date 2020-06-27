@@ -3,7 +3,7 @@ import asyncio
 import time
 import random
 import json
-import pydig
+import socket
 
 from walkoff_app_sdk.app_base import AppBase
 
@@ -26,7 +26,7 @@ class Tools(AppBase):
 
 
     async def ret_str(self, item):
-        dns=pydig.query('google.com', 'A')
+        dns=str(socket.gethostbyname_ex("microsoft.com")[2][0])
         return str(dns[0])
 
 if __name__ == "__main__":
