@@ -27,7 +27,7 @@ class Tools(AppBase):
 
 
     async def ret_str(self, item):
-        dns=str(socket.gethostbyname_ex("microsoft.com")[2])
+        dns=str(socket.gethostbyname_ex(item)[2])
         return str("\n".joined(dns))
 
 if __name__ == "__main__":
