@@ -1,0 +1,23 @@
+app_version: 1.0.0
+name: Jack Test 
+description: A  tool app for Shuffle
+contact_info:
+  name: "Jack Foley"
+  url: https://shuffler.io
+  email: frikky@shuffler.io
+actions:
+  - name: ret_str 
+    description: Parses a list or text and returns the length
+    parameters:
+      - name: item
+        description: The item to check
+        required: true
+        multiline: true
+        example: Hello this is a string
+        schema:
+          type: string 
+    returns:
+      schema:
+        type: string
+
+large_image: 
