@@ -3,7 +3,7 @@ import asyncio
 import time
 import random
 import json
-
+import pydig
 
 from walkoff_app_sdk.app_base import AppBase
 
@@ -26,7 +26,8 @@ class Tools(AppBase):
 
 
     async def ret_str(self, item):
-        return str(item)
+        dns=pydig.query('google.com', 'A')
+        return str(dns[0])
 
 if __name__ == "__main__":
     asyncio.run(Tools.run(), debug=True)
