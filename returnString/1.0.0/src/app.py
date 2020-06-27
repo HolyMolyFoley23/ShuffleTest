@@ -27,8 +27,17 @@ class Tools(AppBase):
 
 
     async def ret_str(self, item):
-        dns=str(socket.gethostbyname_ex(item)[2])
-        return str("\n".join(dns))
+        domain_names = item.splitlines()
+        output_dig=[]
+        for domain in domain_names:
+            dns=socket.gethostbyname_ex(domain)[2]
+            for dig in dns:
+                try:
+                    ip=ipaddress.ip_address(dig)
+                    output_dig.append(domain + " #~# " + str(ip))
+                except:
+                    pass
+        return str("\n".join(output_dig))
 
 if __name__ == "__main__":
     asyncio.run(Tools.run(), debug=True)
