@@ -5,6 +5,7 @@ import random
 import json
 import socket
 
+
 from walkoff_app_sdk.app_base import AppBase
 
 class Tools(AppBase):
@@ -26,8 +27,8 @@ class Tools(AppBase):
 
 
     async def ret_str(self, item):
-        dns=str(socket.gethostbyname_ex("microsoft.com")[2][0])
-        return str(dns[0])
+        dns=str(socket.gethostbyname_ex("microsoft.com")[2])
+        return str("\n".joined(dns))
 
 if __name__ == "__main__":
     asyncio.run(Tools.run(), debug=True)
