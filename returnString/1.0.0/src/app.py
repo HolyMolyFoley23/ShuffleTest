@@ -3,7 +3,7 @@ import asyncio
 import time
 import random
 import json
-import socket
+import ipaddress
 
 
 from walkoff_app_sdk.app_base import AppBase
